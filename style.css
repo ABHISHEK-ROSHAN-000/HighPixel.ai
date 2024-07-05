@@ -81,7 +81,8 @@ nav ul li a:hover {
     }
     nav ul li:nth-child(1), /* All */
     nav ul li:nth-child(4), /* Popular */
-    nav ul li:nth-child(6)  /* New */ {
+    nav ul li:nth-child(6),  /* New */
+    nav ul li:nth-child(12) {
         display: inline;
     }
 }
