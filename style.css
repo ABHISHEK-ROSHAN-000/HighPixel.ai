@@ -13,6 +13,7 @@ html, body {
     font-family: Arial, sans-serif;
 }
 
+
 body {
     display: flex;
     flex-direction: column;
@@ -45,27 +46,16 @@ header h1 a {
 }
 
 header h1 a:hover {
-    color: #ff5722;
+    color: #a5a5a5;
 }
 
-main {
-    padding: 15px;
-    flex: 1;
-}
-
-main section {
-    margin-bottom: 40px;
-}
-
-footer {
-    background-color: #1f1f1f;
+nav {
     text-align: center;
-    padding: 10px;
-    position: relative;
+    font-family: 'Courier New', Courier, monospace;
 }
- 
-/* 
+
 nav ul {
+    align-items: center;
     list-style-type: none;
     padding: 0;
 }
@@ -83,4 +73,89 @@ nav ul li a {
 
 nav ul li a:hover {
     color: #ff5722;
+}
+
+@media (max-width: 1370px) {
+    nav ul li {
+        display: none;
+    }
+    nav ul li:nth-child(1), /* All */
+    nav ul li:nth-child(4), /* Popular */
+    nav ul li:nth-child(6)  /* New */ {
+        display: inline;
+    }
+}
+
+main {
+    padding: 15px;
+    flex: 1;
+}
+
+main section {
+    margin-bottom: 40px;
+}
+
+footer {
+    background-color: #1f1f1f;
+    text-align: center;
+    padding: 0px;
+    position: relative;
+}
+
+.image-container {
+    position: relative;
+    background-size:cover;
+    width: 300px;
+    height: 300px;
+    overflow: hidden;
+    display: inline-block;
+    background-color: white;
+    margin: 10px;
+}
+
+.image-container .hover-image {
+    width: 100%;
+    height: 100%;
+    background-color: white;
+    transition: opacity 0.3s ease;
+}
+
+/* .image-container:hover .hover-image {
+    opacity: 0;
+}
+
+.image-container::after {
+    content: "";
+    background-size:cover;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    transition: opacity 0.2s ease;
+}
+
+.image-container:hover::after {
+    width: 300px;
+    height: 300px;
+    opacity: 1;
+}
+
+
+.container1::after {
+    background: url('image/hover1.jpg') no-repeat center center;
+}
+
+.container2::after {
+    background: url('image/hover2.jpg') no-repeat center center;
+    
+}
+
+.container3::after {
+    background: url('image/hover3.jpg') no-repeat center center;
+}
+
+.container4::after {
+    background: url('image/hover3.jpg') no-repeat center center;
 } */
