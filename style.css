@@ -51,8 +51,10 @@ body {
     text-decoration: none;
     color: white;
     padding: 10px 20px;
-    background-color: #ff6600;
+    background-color: #010409;
     border-radius: 4px;
+    border-top: 2px solid #010409;
+    border-right: 2px solid #010409;
 }
 
 /* .navbar-signup img {
@@ -63,7 +65,11 @@ body {
 } */
 
 .navbar-signup a:hover {
-    background-color: #e65c00;
+    background-color: #0D1117;
+    border-top: 0;
+    border-right: 0;
+    border-bottom: 3px solid rgb(47, 53, 61);
+    border-left: 3px solid rgb(47, 53, 61);
 }
 
 /* Sidebar */
@@ -73,46 +79,53 @@ body {
     padding: 20px;
     height: 100%;
     position: fixed;
-    top: 60px; /* Start below the navbar */
+    top: 60px;
+    /* Start below the navbar */
     left: 0;
     overflow-y: auto;
     border-right: 2px solid rgb(47, 53, 61);
 }
 
 .sidebar h2 {
-    text-align: center;
+    text-align: left;
     color: white;
+    padding: 10;
+    margin-bottom: 5px;
 }
 
 .sidebar ul {
     list-style-type: none;
-    padding: 0;
 }
 
 .sidebar ul li {
-    padding: 10px 0;
+    padding: 5px 0;
     text-align: left;
 }
 
 .sidebar ul li a {
     text-decoration: none;
-    color: #333;
+    
+    /* color: #333; */
     display: block;
     padding: 10px;
-    background-color: #e2e2e2;
+    /* background-color: #3a3977; */
     border-radius: 4px;
 }
 
 .sidebar ul li a:hover {
+    color: #333;
     background-color: #d4d4d4;
+    text-decoration: underline;
 }
 
 /* Main Content */
 .main-content {
     color: white;
-    margin-left: 285px; /* Same width as the sidebar */
+    margin-left: 285px;
+    /* Same width as the sidebar */
     padding: 20px;
-    margin-top: 60px; /* Space for the navbar */
+    margin-top: 60px;
+    /* Space for the navbar */
 }
 
 .content-wrapper {
@@ -121,29 +134,36 @@ body {
 
 @media (max-width: 750px) {
     .sidebar {
-                position: relative;
-                width: 80%; /* 80% of the screen width */
-                margin: 20px auto; /* Center the sidebar horizontally */
-                top: 80px;
-                height: auto;
-                border: 2px solid rgb(47, 53, 61); /* Add a border */
-                background-color: #0D1117;
-                border-radius: 8px; /* Optional: rounded corners */
-            }
+        position: relative;
+        width: 90%;
+        /* 80% of the screen width */
+        margin: 20px auto;
+        /* Center the sidebar horizontally */
+        top: 90px;
+        height: auto;
+        border: 2px solid rgb(47, 53, 61);
+        /* Add a border */
+        background-color: #0D1117;
+        border-radius: 8px;
+        /* Optional: rounded corners */
+    }
 
     .main-content {
-                margin-left: 0; /* Main content takes full width */
-                margin-top: 20px; /* Ensure some space between sidebar and content */
-            }
+        margin-left: 0;
+        /* Main content takes full width */
+        margin-top: 70px;
+        /* Ensure some space between sidebar and content */
+    }
 
-            .sidebar ul {
-                display: flex;
-                flex-direction: column;
-                align-items: center; /* Center the list items */
-            }
+    .sidebar ul {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        /* Center the list items */
+    }
 
-            .sidebar ul li {
-                width: 100%;
-                text-align: center;
-            }
+    .sidebar ul li {
+        width: 100%;
+        text-align: left;
+    }
 }
