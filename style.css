@@ -1,0 +1,130 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    color: white;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    background-color: #010409;
+}
+
+/* Navigation Bar */
+.navbar {
+    width: 100%;
+    background-color: #010409;
+    color: white;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+    border-bottom: 2px solid rgb(47, 53, 61);
+}
+
+.navbar-logo {
+    display: flex;
+    align-items: center;
+}
+
+.navbar-logo img {
+    width: 40px;
+    height: 40px;
+    margin-right: 10px;
+    border-radius: 50%;
+}
+
+.navbar-logo h1 {
+    font-size: 27px;
+    margin: 10px;
+    font-family: 'Courier New', Courier, monospace;
+}
+
+.navbar-signup a {
+    text-decoration: none;
+    color: white;
+    padding: 10px 20px;
+    background-color: #ff6600;
+    border-radius: 4px;
+}
+
+/* .navbar-signup img {
+    width: 40px;
+    height: 40px;
+    margin-right: 10px;
+    border-radius: 50%;
+} */
+
+.navbar-signup a:hover {
+    background-color: #e65c00;
+}
+
+/* Sidebar */
+.sidebar {
+    width: 285px;
+    background-color: #0D1117;
+    padding: 20px;
+    height: 100%;
+    position: fixed;
+    top: 60px; /* Start below the navbar */
+    left: 0;
+    overflow-y: auto;
+    border-right: 2px solid rgb(47, 53, 61);
+}
+
+.sidebar h2 {
+    text-align: center;
+    color: white;
+}
+
+.sidebar ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.sidebar ul li {
+    padding: 10px 0;
+    text-align: left;
+}
+
+.sidebar ul li a {
+    text-decoration: none;
+    color: #333;
+    display: block;
+    padding: 10px;
+    background-color: #e2e2e2;
+    border-radius: 4px;
+}
+
+.sidebar ul li a:hover {
+    background-color: #d4d4d4;
+}
+
+/* Main Content */
+.main-content {
+    color: white;
+    margin-left: 285px; /* Same width as the sidebar */
+    padding: 20px;
+    margin-top: 60px; /* Space for the navbar */
+}
+
+.content-wrapper {
+    padding: 20px;
+}
+
+@media (max-width: 750px) {
+    .sidebar {
+        display: none; /* Hides the sidebar */
+    }
+
+    .main-content {
+        margin-left: 0; /* Main content takes full width */
+    }
+}
