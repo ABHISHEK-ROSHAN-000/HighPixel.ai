@@ -121,8 +121,15 @@ body {
 
 @media (max-width: 750px) {
     .sidebar {
-        display: none; /* Hides the sidebar */
-    }
+                position: relative;
+                width: 80%; /* 80% of the screen width */
+                margin: 20px auto; /* Center the sidebar horizontally */
+                top: 0;
+                height: auto;
+                border: 2px solid rgb(47, 53, 61); /* Add a border */
+                background-color: #0D1117;
+                border-radius: 8px; /* Optional: rounded corners */
+            }
 
     .main-content {
         margin-left: 0; /* Main content takes full width */
