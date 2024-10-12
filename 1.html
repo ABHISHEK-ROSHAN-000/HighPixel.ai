@@ -23,6 +23,8 @@
             <a href="#">Sign Up</a>
         </div>
     </div>
+    <!-- Toggle Button (Below Navbar) -->
+    <button class="toggle-btn" onclick="toggleSidebar()"><b>></b></button>
 
     <!-- Sidebar -->
     <div class="sidebar">
@@ -58,15 +60,27 @@
             <h1>Mark</h1>
             <p></p>
         </div>
-        <!-- <div class="content-wrapper">
-            <h1>Mark</h1>
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Officiis repellendus magnam saepe dolores aut nulla minus, similique hic eum maiores quos non accusamus quis incidunt distinctio, voluptates quas cum inventore!</p>
-        </div>
-        <div class="content-wrapper">
-            <h1>Mark</h1>
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Officiis repellendus magnam saepe dolores aut nulla minus, similique hic eum maiores quos non accusamus quis incidunt distinctio, voluptates quas cum inventore!</p>
-        </div> -->
     </div>
+
+    <script>
+        function toggleSidebar() {
+            const sidebar = document.getElementById('sidebar');
+            const togglebtnborder = document.getElementById('sidebar');
+            const toggleBtn = document.querySelector('.toggle-btn');
+
+            // Toggle the sidebar visibility
+            sidebar.classList.toggle('active');
+
+            // Adjust the left border width and button text when toggled
+            if (togglebtnborder.classList.contains('active')) {
+                // togglebtnborder.style.borderLeftWidth = '10px';
+                // toggleBtn.innerHTML = '<b><</b>'; // Change button text to "<" when active
+            } else {
+                togglebtnborder.style.borderLeftWidth = '1px';
+                toggleBtn.innerHTML = '<b>></b>'; // Change button text to ">" when inactive
+            }
+        }
+    </script>
 
 </body>
 

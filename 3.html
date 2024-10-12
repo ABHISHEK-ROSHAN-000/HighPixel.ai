@@ -24,6 +24,9 @@
         </div>
     </div>
 
+    <!-- Toggle Button (Below Navbar) -->
+    <button class="toggle-btn" onclick="toggleSidebar()"><b>></b></button>
+
     <!-- Sidebar -->
     <div class="sidebar">
         <h2>AI Models: </h2>
@@ -67,6 +70,13 @@
             <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Officiis repellendus magnam saepe dolores aut nulla minus, similique hic eum maiores quos non accusamus quis incidunt distinctio, voluptates quas cum inventore!</p>
         </div> -->
     </div>
+
+    <script>
+        function toggleSidebar() {
+            const sidebar = document.getElementById('sidebar');
+            sidebar.classList.toggle('active');
+        }
+    </script>
 
 </body>
 
