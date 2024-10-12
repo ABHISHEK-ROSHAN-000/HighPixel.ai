@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Highoixel Website</title>
+    <title>HighPixel Website</title>
     <link rel="stylesheet" href="style.css">
 </head>
 
@@ -19,7 +19,6 @@
             <h1><a href="index.html">HighPixel</a></h1>
         </div>
         <div class="navbar-signup">
-            <!-- <img src="img.jpg" alt="error"> -->
             <a href="#">Sign Up</a>
         </div>
     </div>
@@ -28,7 +27,7 @@
     <button class="toggle-btn" onclick="toggleSidebar()"><b>></b></button>
 
     <!-- Sidebar -->
-    <div class="sidebar">
+    <div class="sidebar" id="sidebar">
         <h2>AI Models: </h2>
         <ul>
             <li><a href="1.html">Mark llm</a></li>
@@ -37,21 +36,7 @@
             <li><a href="4.html">GAN</a></li>
             <li><a href="5.html">Robot</a></li>
             <li><a href="#">Example.</a></li>
-            <li><a href="#">Example.</a></li>
-            <li><a href="#">Example.</a></li>
-            <li><a href="#">Example.</a></li>
-            <li><a href="#">Example.</a></li>
-            <li><a href="#">Example.</a></li>
-            <li><a href="#">Example.</a></li>
-            <li><a href="#">Example.</a></li>
-            <li><a href="#">Example.</a></li>
-            <li><a href="#">Example.</a></li>
-            <li><a href="#">Example.</a></li>
-            <li><a href="#">Example.</a></li>
-            <li><a href="#">Example.</a></li>
-            <li><a href="#">Example.</a></li>
-            <li><a href="#">Example.</a></li>
-            <li><a href="#">Example.</a></li>
+            <!-- Additional List Items -->
         </ul>
     </div>
 
@@ -61,20 +46,24 @@
             <h1>Diffusion AI</h1>
             <p></p>
         </div>
-        <!-- <div class="content-wrapper">
-            <h1>Mark</h1>
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Officiis repellendus magnam saepe dolores aut nulla minus, similique hic eum maiores quos non accusamus quis incidunt distinctio, voluptates quas cum inventore!</p>
-        </div>
-        <div class="content-wrapper">
-            <h1>Mark</h1>
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Officiis repellendus magnam saepe dolores aut nulla minus, similique hic eum maiores quos non accusamus quis incidunt distinctio, voluptates quas cum inventore!</p>
-        </div> -->
     </div>
 
     <script>
         function toggleSidebar() {
             const sidebar = document.getElementById('sidebar');
+            const toggleBtn = document.querySelector('.toggle-btn');
+
+            // Toggle the sidebar visibility
             sidebar.classList.toggle('active');
+
+            // Adjust the left border width and button text when toggled
+            if (sidebar.classList.contains('active')) {
+                // sidebar.style.borderLeftWidth = '10px'; // Add border width when active
+                // toggleBtn.innerHTML = '<b><</b>'; // Change button text to "<" when active
+            } else {
+                sidebar.style.borderLeftWidth = '1px'; // Restore original border width
+                toggleBtn.innerHTML = '<b>></b>'; // Change button text to ">" when inactive
+            }
         }
     </script>
 
