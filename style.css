@@ -125,7 +125,7 @@ body {
     /* color: #333; */
     transition: 0.1s;
     background-color: #010409;
-    text-decoration: underline;
+    /* text-decoration: underline; */
     border-top: 0;
     border-right: 0;
     border-bottom: 3px solid rgb(47, 53, 61);
