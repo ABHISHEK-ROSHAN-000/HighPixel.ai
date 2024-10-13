@@ -42,9 +42,31 @@
     <!-- Main Content -->
     <div class="main-content">
         <div class="content-wrapper">
-            <h1>Home</h1>
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit...</p>
-            <img src="img.jpg" alt="error" style="padding-top: 20px;width: 60%;">
+            <ul class="top-bar-buttons" >
+                <li><a href="#" onclick="scrollToSection('Working')">Working</a></li>
+                <li><a href="#" onclick="scrollToSection('Code Example')">Code Example</a></li>
+                <li><a href="#" onclick="scrollToSection('Conclusion')">Conclusion</a></li>
+            </ul>
+        </div>
+        <div class="content-wrapper" id="Working">
+            <h1>HighPixel.Ai</h1><br>
+            <p><b>HighPixel.Ai</b> is a general solution for AI and the study of making and creating AI, including LLM (Large Language Models), Text to Image (Diffusion AI), Text to Video, Text to Voice, etc...</p>
+            <img src="img.jpg" alt="error" style="padding-top: 20px;width: 40%;margin-left: 25.5%;">
+            <p style="padding-top: 20px;"><b>HighPixel.Ai</b> was created by <u><b>Abhishek.S.Roshan</b></u>.</p>
+        </div>
+        <div class="content-wrapper" id="Code Example">
+            <h1>Code</h1><br>
+            <p>This section discusses the code behind HighPixel and its AI functionalities.</p>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Commodi, in. Ducimus explicabo, rerum, error reprehenderit consequuntur molestias, dignissimos sequi aliquam corporis at praesentium. Fuga perferendis facere in eligendi obcaecati. Cupiditate.</p>
+            <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quam fugit odit, vitae eaque possimus rem sint sequi aut consequatur dolore consectetur necessitatibus! Quasi ad ipsa id deserunt nihil qui tenetur?</p>
+            <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Accusamus consectetur soluta maiores. Accusamus, ducimus ut! Eaque culpa doloremque, nisi facilis minus perferendis consequuntur natus voluptate exercitationem alias voluptatibus tenetur placeat?</p>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Provident, perspiciatis id! Voluptate soluta voluptas provident, delectus amet beatae velit quas, illum architecto blanditiis dignissimos numquam placeat. Ea dolorum rerum dolor.</p>
+        </div>
+        <div class="content-wrapper" id="Conclusion">
+            <h1>HighPixel.Ai</h1><br>
+            <p><b>HighPixel.Ai</b> is a general solution for AI and the study of making and creating AI, including LLM (Large Language Models), Text to Image (Diffusion AI), Text to Video, Text to Voice, etc...</p>
+            <img src="img.jpg" alt="error" style="padding-top: 20px;width: 40%;margin-left: 25.5%;">
+            <p style="padding-top: 20px;"><b>HighPixel.Ai</b> was created by <u><b>Abhishek.S.Roshan</b></u>.</p>
         </div>
     </div>
 
@@ -66,8 +88,12 @@
                 toggleBtn.innerHTML = '<b>></b>'; // Change button text to ">" when inactive
             }
         }
-    </script>
 
+        // Function to scroll to different sections
+        function scrollToSection(sectionId) {
+            const section = document.getElementById(sectionId);
+            section.scrollIntoView({ behavior: 'smooth' });}
+    </script>
 
 </body>
 
