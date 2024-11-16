@@ -3,7 +3,7 @@
     padding: 0;
     box-sizing: border-box;
     color: white;
-    /* font-family:'Courier New', Courier, monospace; */
+    font-family:'Courier New', Courier, monospace;
 }
 
 body {
@@ -11,7 +11,7 @@ body {
     height: 100vh;
     display: flex;
     flex-direction: column;
-    background-color: #010409;
+    background: linear-gradient(135deg, #29003E, #040205) fixed no-repeat;
 }
 
 /* Navigation Bar */
@@ -38,6 +38,7 @@ body {
 .navbar-logo img {
     width: 46px;
     height: 46px;
+    margin-top: 5px;
     margin-right: 10px;
     /* border-radius: 50%; */
 }
@@ -73,7 +74,7 @@ body {
 /* Sidebar */
 .sidebar {
     width: 285px;
-    background-color: #0D1117;
+    background-color: #0d11179c;
     padding: 20px;
     height: 87.5%;
     position: fixed;
@@ -150,7 +151,7 @@ body {
 .content-wrapper {
     padding: 20px;
     margin-top: 15px;
-    background-color: #0D1117;
+    background-color: #0d11179c;
     border: 2px solid rgb(47, 53, 61);
     border-radius: 8px;
 }
@@ -180,6 +181,7 @@ body {
         display: none;
         width: 90%;
         height: 82%;
+        background-color: #0d1117;
     }
 
     .sidebar.active {
