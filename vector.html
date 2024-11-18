@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>VECTOR</title>
+    <link rel="stylesheet" href="vector.css">
+    <link rel="icon" href="Highpixel2.png" type="image/png">
+</head>
+
+<body>
+    <header class="navbar">
+        <div class="logo"><a href="index.html">HIGHPIXEL</a></div>
+        <nav></nav>
+        <div class="auth-buttons"></div>
+    </header>
+
+    <main class="hero">
+        <h1 class="title" id="vector-title">VECTOR</h1>
+        <div id="chat-box"></div>
+        <div class="footer-input">
+            <div class="input-box">
+                <input type="file" name="file" id="file" hidden>
+                <label for="file" class="file-button">📁</label>
+                <input class="cta-button" id="user-input" placeholder="Message VECTOR" />
+                <button class="submit-btn" id="send-btn">➡️</button>
+            </div>
+            <p class="warning"><small>AI can make mistakes, please check sensitive information</small></p>
+        </div>
+    </main>
+
+    <!-- Import Gemini API -->
+    <script type="importmap">
+        {
+            "imports": {
+                "@google/generative-ai": "https://esm.run/@google/generative-ai"
+            }
+        }
+    </script>
+    
+    <script type="module">
+        import { GoogleGenerativeAI } from "@google/generative-ai";
+
+        // Replace with your actual API key
+        const API_KEY = "AIzaSyDmllcvaocoSQOJ5hbdfWyP2cfj2hAVC20";
+        const genAI = new GoogleGenerativeAI(API_KEY);
+        const model = genAI.getGenerativeModel({ model: "gemini-1.5-flash" });
+
+        // Reference UI elements
+        const sendBtn = document.getElementById("send-btn");
+        const userInput = document.getElementById("user-input");
+        const chatBox = document.getElementById("chat-box");
+        const vectorTitle = document.getElementById("vector-title");
+
+        let conversationStarted = false;
+
+        // Helper function to display messages
+        const displayMessage = (message, isUser = false) => {
+            const messageDiv = document.createElement("div");
+            messageDiv.className = isUser ? "user-message" : "ai-message";
+            messageDiv.textContent = message;
+            chatBox.appendChild(messageDiv);
+        };
+
+        // Function to handle message sending
+        const sendMessage = async () => {
+            const userMessage = userInput.value.trim();
+            if (!userMessage) return;
+
+            // Hide VECTOR title if conversation starts
+            if (!conversationStarted) {
+                vectorTitle.style.display = "none";
+                conversationStarted = true;
+            }
+
+            // Display user message
+            displayMessage(userMessage, true);
+            userInput.value = "";
+
+            // Generate AI response
+            try {
+                const response = await model.generateContent(userMessage);
+                const aiMessage = response.response.text();
+                displayMessage(aiMessage);
+            } catch (error) {
+                console.error("Error communicating with Gemini API:", error);
+                displayMessage("Sorry, something went wrong. Please try again.");
+            }
+        };
+
+        // Send on button click
+        sendBtn.addEventListener("click", sendMessage);
+
+        // Send on Enter key press
+        userInput.addEventListener("keypress", (event) => {
+            if (event.key === "Enter") {
+                sendMessage();
+            }
+        });
+    </script>
+</body>
+
+</html>
