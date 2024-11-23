@@ -111,7 +111,7 @@ body {
 .hero {
     text-align: center;
     position: relative;
-    padding: 380px 0px;
+    padding: 380px 0px 0px 0px;
 }
 
 .title {
