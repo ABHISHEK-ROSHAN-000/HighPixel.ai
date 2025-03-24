@@ -1,2 +1,0 @@
-# HighPixel.ai
- AI Learning
