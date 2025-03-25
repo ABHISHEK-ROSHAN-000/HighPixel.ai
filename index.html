@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ammite Ai</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="cursor-follower"></div>
+    
+    <div class="navbar">
+        <div class="logo">
+            <h1><a href="index.html">Ammite Ai</a></h1>
+        </div>
+        <div class="nav-links">
+            <a href="index.html">HOME</a>
+            <a href="#">FEATURES</a>
+            <a href="#">ENTERPRISE</a>
+            <a href="#">BLOG</a>
+            <a href="#">FORUM</a>
+            <a href="#">CAREERS</a>
+        </div>
+        <div class="nav-buttons">
+            <button class="sign-in">SIGN IN</button>
+        </div>
+        <div class="menu-button">
+            <div class="bar"></div>
+            <div class="bar"></div>
+            <div class="bar"></div>
+        </div>
+    </div>
+    
+    <div class="mobile-menu">
+        <a href="#">HOME</a>
+        <a href="#">FEATURES</a>
+        <a href="#">ENTERPRISE</a>
+        <a href="#">BLOG</a>
+        <a href="#">FORUM</a>
+        <a href="#">CAREERS</a>
+        <button class="sign-in mobile-sign-in">SIGN IN</button>
+    </div>
+    
+    <div class="hero-section">
+        <div class="hero-content">
+            <h1>Ammite Ai</h1>
+            <p>Ammite Ai is a platform for creating and sharing AI models.</p>
+        </div>
+    </div>
+    <div class="content-section">
+        <div class="content-container">
+            <!-- <img src="img\img.jpg" alt="error"> -->
+            <h1>Ammite Ai</h1>
+            <p>Ammite Ai is a platform for creating and sharing AI models.</p>
+        </div>
+    </div>
+<script>
+    const navbar = document.querySelector('.navbar');
+    
+    window.addEventListener('scroll', function() {
+        if (!document.body.classList.contains('menu-open')) {
+            if (window.scrollY > 31) {
+                navbar.classList.add('navbar-shadow');
+            } else {
+                navbar.classList.remove('navbar-shadow');
+            }
+        }
+    });
+    
+    const menuButton = document.querySelector('.menu-button');
+    const mobileMenu = document.querySelector('.mobile-menu');
+    
+    menuButton.addEventListener('click', function() {
+        mobileMenu.classList.toggle('active');
+        menuButton.classList.toggle('active');
+        document.body.classList.toggle('menu-open');
+        
+        if (document.body.classList.contains('menu-open')) {
+            navbar.classList.remove('navbar-shadow');
+        } else if (window.scrollY > 31) {
+            navbar.classList.add('navbar-shadow');
+        }
+    });
+
+    // Cursor follower animation
+    const cursorFollower = document.querySelector('.cursor-follower');
+    let mouseX = 0, mouseY = 0;
+    let cursorX = 0, cursorY = 0;
+    
+    // Track mouse position
+    document.addEventListener('mousemove', (e) => {
+        mouseX = e.clientX;
+        mouseY = e.clientY;
+        
+        // Update the gradient rotation based on mouse movement
+        const angle = (Math.atan2(e.clientY - window.innerHeight/2, e.clientX - window.innerWidth/2) * 180 / Math.PI) + 90;
+        cursorFollower.style.setProperty('--gradient-angle', angle + 'deg');
+    });
+    
+    // Smooth animation using requestAnimationFrame
+    function animateCursor() {
+        // Calculate the distance between mouse and cursor
+        const distX = mouseX - cursorX;
+        const distY = mouseY - cursorY;
+        
+        // Move cursor with smooth easing
+        cursorX = cursorX + (distX * 0.15);
+        cursorY = cursorY + (distY * 0.15);
+        
+        // Apply the position to main cursor
+        cursorFollower.style.left = `${cursorX}px`;
+        cursorFollower.style.top = `${cursorY}px`;
+        
+        // Continue the animation loop
+        requestAnimationFrame(animateCursor);
+    }
+    
+    // Start the animation
+    animateCursor();
+    
+    // Add animation on mouse click
+    document.addEventListener('mousedown', () => {
+        cursorFollower.classList.add('expand');
+    });
+    
+    document.addEventListener('mouseup', () => {
+        cursorFollower.classList.remove('expand');
+    });
+    
+    // Add special effects for links and buttons
+    const interactiveElements = document.querySelectorAll('a, button');
+    
+    interactiveElements.forEach(el => {
+        el.addEventListener('mouseenter', () => {
+            cursorFollower.classList.add('interactive');
+        });
+        
+        el.addEventListener('mouseleave', () => {
+            cursorFollower.classList.remove('interactive');
+        });
+    });
+</script>
+</body>
+</html>
