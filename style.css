@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Doto:wght@100..900&family=Geist+Mono:wght@100..900&family=Philosopher:ital,wght@0,400;0,700;1,400;1,700&family=Pixelify+Sans:wght@400..700&family=Silkscreen:wght@400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Doto:wght@100..900&family=Geist+Mono:wght@776&family=Geist:wght@100..900&family=Philosopher:ital,wght@0,400;0,700;1,400;1,700&family=Pixelify+Sans:wght@400..700&family=Silkscreen:wght@400;700&display=swap');
 
 * {
     margin: 0;
@@ -39,7 +39,7 @@ body.menu-open {
 }
 
 .navbar-shadow {
-    box-shadow: 0 0px 4vh rgba(255, 255, 255, 0.2);
+    box-shadow: 0 0px 4vh rgba(255, 255, 255, 0.1);
     border: 1px solid rgba(255, 255, 255, 0.2);
 }
 
@@ -48,6 +48,10 @@ body.menu-open {
     font-weight: bold;
     font-family: 'Philosopher', sans-serif;
     text-decoration: none;
+}
+
+.logo h1 {
+    transform: translateY(-10%);
 }
 
 .nav-links {
@@ -93,12 +97,63 @@ body.menu-open {
 }
 
 .hero-section {
-    background: linear-gradient(90deg, #6b14a1, #ea6e3b, #4ca53e);
+    background: linear-gradient(90deg, #00d3d3, #8A2BE2);
+    /* background: linear-gradient(to right, #fc72ff, #8f68ff, #487bff); */
     margin-top: 12.5vh;
     height: 84.5vh;
     margin-left: 2.5vw;
     margin-right: 2.5vw;
     border-radius: 10px;
+}
+
+.hero-buttons {
+    display: flex;
+    gap: 15px;
+    padding-top: 5vh;
+}
+
+.hero-buttons button {
+    height: 5vh;
+    width: 10vw;
+    font-size: 16px;
+    background-color: transparent;
+    border: 1px solid rgba(255, 255, 255, 0.2) !important;
+    border-radius: 8px;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+    position: relative;
+    overflow: hidden;
+    transition: all 0.3s ease, transform 0.2s ease;
+}
+
+.hero-buttons button:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+    transform: translateY(-3px);
+    box-shadow: 0 7px 20px rgba(0, 0, 0, 0.3);
+    border: 1px solid rgba(255, 255, 255, 0.5) !important;
+}
+
+.hero-buttons button::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+    transition: left 0.7s ease;
+}
+
+.hero-buttons button:hover::before {
+    left: 100%;
+}
+
+.hero-buttons .youtube:hover {
+    box-shadow: 0 7px 20px rgba(80, 80, 80, 0.3);
+}
+
+.hero-buttons .github:hover {
+    box-shadow: 0 7px 20px rgba(80, 80, 80, 0.3);
 }
 
 .hero-content {
@@ -199,18 +254,120 @@ body.menu-open {
     font-size: large;
 }
 
-.content-section {
+.latest-projects {
     margin-top: 12.5vh;
     margin-left: 16vw;
     margin-right: 16vw;
     border-radius: 10px;
+    margin-bottom: 10vh;
+    /* background: linear-gradient(90deg, #00d3d3, #8A2BE2); */
 }
 
-.content-container img {
+.latest-projects-content {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+}
+
+.latest-projects-content iframe {
+    border-radius: 15px;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    align-self: center;
+}
+
+.latest-projects-content-text {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    margin-top: 3vh;
+    margin-bottom: 2vh;
+}
+
+.latest-projects-content-text button {
+    height: 5vh;
+    width: auto;
+    padding: 0 20px;
+    background-color: rgba(255, 0, 0, 0);
+    border: 1px solid rgba(255, 255, 255, 0.3) !important;
+    transition: all 0.3s ease, transform 0.2s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    border-radius: 8px;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+    box-shadow: 0 0 10px rgba(253, 253, 253, 0.2);
+    overflow: hidden;
+    animation: youtube-pulse 2s infinite alternate;
+}
+
+@keyframes youtube-pulse {
+    0% {
+        box-shadow: 0 0 10px rgba(255, 255, 255, 0.2);
+    }
+    100% {
+        box-shadow: 0 0 15px rgba(255, 255, 255, 0.4);
+    }
+}
+
+.latest-projects-content-text button:hover {
+    background-color: rgba(255, 0, 0, 0);
+    transform: translateY(-3px);
+    box-shadow: 0 7px 20px rgba(255, 0, 0, 0.3), 0 0 15px rgba(255, 0, 0, 0.5);
+    border: 1px solid rgba(255, 255, 255, 0.5) !important;
+    animation: youtube-hover-pulse 1s infinite alternate;
+}
+
+@keyframes youtube-hover-pulse {
+    0% {
+        box-shadow: 0 7px 20px rgba(255, 255, 255, 0.3);
+    }
+    100% {
+        box-shadow: 0 7px 25px rgba(255, 255, 255, 0.4);
+    }
+}
+
+.latest-projects-content-text button::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
     width: 100%;
     height: 100%;
-    object-fit: cover;
-    border-radius: 10px;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
+    transition: none;
+}
+
+.latest-projects-content-text button:hover::before {
+    animation: youtube-shine 1.5s infinite;
+}
+
+@keyframes youtube-shine {
+    0% {
+        left: -100%;
+    }
+    100% {
+        left: 100%;
+    }
+}
+
+.latest-projects-content h1 {
+    font-size: 4vw;
+    font-weight: bold;
+    font-family: "Geist", sans-serif;
+    text-align: left;
+    margin: 0;
+}
+
+.latest-projects-content p {
+    font-size: 2vw;
+    font-weight: bold;
+    font-family: "Geist", sans-serif;
+    text-align: left;
+    width: 100%;
 }
 
 /* Responsive design */
@@ -232,14 +389,16 @@ body.menu-open {
     }
 
     .hero-section {
-        background: linear-gradient(90deg, #6b14a1, #ea6e3b);
+        background: linear-gradient(90deg, #00d3d3, #8A2BE2);
     }
     .hero-content h1 {
-        font-size: 15vw;
+        font-size: 14vw;
     }
     
     .hero-content p {
         font-size: 4vw;
+        padding-left: 10vw;
+        padding-right: 10vw;
     }
     
     /* Disable cursor follower on mobile */
@@ -253,6 +412,42 @@ body.menu-open {
     
     a, button {
         cursor: pointer; /* Restore default pointer cursor for interactive elements */
+    }
+
+    .hero-buttons button {
+        width: 30vw;
+        height: 6vh;
+        font-size: 4vw; /* Responsive font size for hero buttons on mobile */
+    }
+    
+    .latest-projects-content-text {
+        flex-direction: column;
+        gap: 15px;
+        align-items: flex-start;
+    }
+    
+    .latest-projects-content-text h1 {
+        font-size: 6vw;
+    }
+    
+    .latest-projects-content-text button {
+        width: 100%;
+        height: 6vh;
+        font-size: 3.5vw; /* Responsive font size for YouTube buttons in latest projects */
+    }
+    
+    .latest-projects-content iframe {
+        width: 100%;
+        height: auto;
+        aspect-ratio: 16/9;
+    }
+    
+    .latest-projects-content h1 {
+        font-size: 6vw; /* Larger font size for project titles on mobile */
+    }
+    
+    .latest-projects-content p {
+        font-size: 3.5vw; /* Adjusted description text size for mobile */
     }
 }
 
